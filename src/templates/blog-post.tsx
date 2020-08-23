@@ -1,12 +1,28 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { css } from "glamor"
+
+const topPageContainerStyle = css({
+  textAlign: 'center',
+  fontFamily: "Kanit",
+})
+
+const pageContentsContainerStyle = css({
+  margin: 'auto',
+  width: '40%',
+  textAlign: 'left',
+  fontSize: 20,
+})
 
 export default function BlogPost({ data } : { data: any }) {
   const post = data.markdownRemark
   return (
-    <div>
-      <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+    <div {...topPageContainerStyle}>
+      <h1>Title : {post.frontmatter.title}</h1>
+      <div >Date : {post.frontmatter.date}</div>
+      <div {...pageContentsContainerStyle}>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </div>
     </div>
   )
 }
@@ -17,6 +33,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        date
       }
     }
   }
