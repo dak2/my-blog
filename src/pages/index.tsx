@@ -5,34 +5,58 @@ import { css } from "glamor"
 import Header from "../components/header";
 
 const topPageHeaderStyle = css({
-  fontSize: 50,
+  fontSize: 60,
   textAlign: 'center',
   borderBottom: 'medium solid #000000',
 })
 
+const topPageContainerStyle = css({
+  textAlign: 'center',
+  fontFamily: "Kanit",
+})
+
+const pageListContainerStyle = css({
+  margin: 'auto',
+  textAlign: 'left',
+  width: '40%',
+})
+
+const pageTitleStyle = css({
+  fontSize: 27,
+})
+
+const linkStyle = css({
+  textDecoration: 'none',
+  color: 'rgb(3,111,185)',
+  fontWeight: 'bold',
+})
+
 export default function Home({ data } : { data: any }) {
   return (
-    <div>
+    <div {...topPageContainerStyle}>
       <Header 
         headerText={"Kami Blog"}
-        styleAttribute={topPageHeaderStyle} 
+        styleAttribute={topPageHeaderStyle}
       />
-      <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-      {data.allMarkdownRemark.edges.map(({ node } : { node: any }) => (
-        <div key={node.id}>
-          <Link
-            to={node.fields.slug}
-          >
-            <h3>
-              {node.frontmatter.title}{" "}
-            </h3>
-          </Link>
-          <span>
-          — {node.frontmatter.date}
-          </span>
-          <p>{node.excerpt}</p>
-        </div>
-      ))}
+      <div {...pageListContainerStyle}>
+        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+        {data.allMarkdownRemark.edges.map(({ node } : { node: any }) => (
+          <div key={node.id} style={{marginBottom: '10%'}}>
+            <Link
+              to={node.fields.slug}
+              {...linkStyle}
+            >
+              <div {...pageTitleStyle}>
+                {node.frontmatter.title}{" "}
+              </div>
+            </Link>
+            <div>
+            — {node.frontmatter.date}
+            </div>
+            <p>{node.excerpt}</p>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
