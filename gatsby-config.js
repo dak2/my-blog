@@ -19,5 +19,17 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `gatsbyjs-kami-blog`,
+        short_name: `kami-blog`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `minimal-ui`,
+        icon: `static/blog_icon.png`,
+      },
+    },
   ],
 }
