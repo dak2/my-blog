@@ -2,51 +2,50 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import "typeface-kanit"
 import { css } from "glamor"
+import "../styles/test.css";
 import Header from "../components/header";
 
-const topPageHeaderStyle = css({
-  fontSize: 60,
-  textAlign: 'center',
-  borderBottom: 'medium solid #000000',
-})
+// const topPageHeaderStyle = css({
+//   fontSize: 60,
+//   textAlign: 'center',
+//   borderBottom: 'medium solid #000000',
+// })
 
-const topPageContainerStyle = css({
-  textAlign: 'center',
-  fontFamily: "Kanit",
-})
+// const topPageContainerStyle = css({
+//   textAlign: 'center',
+//   fontFamily: "Kanit",
+// })
 
-const pageListContainerStyle = css({
-  margin: 'auto',
-  textAlign: 'left',
-  width: '40%',
-})
+// const pageListContainerStyle = css({
+//   margin: 'auto',
+//   textAlign: 'left',
+//   width: '40%',
+// })
 
-const pageTitleStyle = css({
-  fontSize: 27,
-})
+// const pageTitleStyle = css({
+//   fontSize: 27,
+// })
 
-const linkStyle = css({
-  textDecoration: 'none',
-  color: 'rgb(3,111,185)',
-  fontWeight: 'bold',
-})
+// const linkStyle = css({
+//   textDecoration: 'none',
+//   color: 'rgb(3,111,185)',
+//   fontWeight: 'bold',
+// })
 
 export default function Home({ data } : { data: any }) {
   return (
-    <div {...topPageContainerStyle}>
+    <div >
       <Header 
         headerText={"Kami Blog"}
-        styleAttribute={topPageHeaderStyle}
       />
-      <div {...pageListContainerStyle}>
+      <div >
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {data.allMarkdownRemark.edges.map(({ node } : { node: any }) => (
           <div key={node.id} style={{marginBottom: '10%'}}>
             <Link
               to={node.fields.slug}
-              {...linkStyle}
             >
-              <div {...pageTitleStyle}>
+              <div>
                 {node.frontmatter.title}{" "}
               </div>
             </Link>
