@@ -1,11 +1,10 @@
 import React from "react"
 import "typeface-kanit"
 import { Link } from "gatsby";
-import { css, StyleAttribute } from "glamor"
+import "../styles/header.css";
 
 type Props = {
   headerText: string,
-  styleAttribute?: StyleAttribute,
 }
 
 class Header extends React.Component<Props, {}> {
@@ -14,7 +13,7 @@ class Header extends React.Component<Props, {}> {
       <Link
         to="/"
       >
-        <h1 {...this.props.styleAttribute}>{this.props.headerText}</h1>
+        <h1>{this.props.headerText}</h1>
       </Link>
     );
   }
