@@ -1,42 +1,20 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { css } from "glamor"
-import Header from "../components/header";
-
-const topPageContainerStyle = css({
-  textAlign: 'center',
-  fontFamily: "Kanit",
-})
-
-const topPageHeaderStyle = css({
-  fontSize: 60,
-  textAlign: 'center',
-  borderBottom: 'medium solid #000000',
-})
-
-const pageContentsContainerStyle = css({
-  margin: 'auto',
-  width: '40%',
-  textAlign: 'left',
-  fontSize: 20,
-})
+import Layout from "../components/layout";
+import "../styles/blog-post.css";
 
 export default function BlogPost({ data } : { data: any }) {
   const post = data.markdownRemark
   return (
-    <div {...topPageContainerStyle}>
-      <Header
-        headerText={"Kami Blog"}
-        styleAttribute={topPageHeaderStyle}
-      />
-      <div {...topPageContainerStyle}>
-        <h1>Title : {post.frontmatter.title}</h1>
+    <Layout>
+      <div>
+        <h2>Title : {post.frontmatter.title}</h2>
         <div >Date : {post.frontmatter.date}</div>
-        <div {...pageContentsContainerStyle}>
+        <div className="pageContainer">
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 

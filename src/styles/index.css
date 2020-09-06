@@ -1,0 +1,12 @@
+.title {
+  text-decoration: 'none';
+  color: rgb(3,111,185);
+  font-weight: bold;
+  font-size: 27px;
+}
+
+.description {
+  width: 60%;
+  margin: 0 auto;
+  text-align: left;
+}

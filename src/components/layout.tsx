@@ -5,7 +5,7 @@ import "../styles/layout.css";
 
 export default function Layout({ children } : { children: any }) {
   return (
-    <div>
+    <div className="commonContainer">
       <Header 
         headerText={"Kami Blog"}
       />
