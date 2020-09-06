@@ -1,9 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import "typeface-kanit"
-import { css } from "glamor"
-import "../styles/test.css";
 import Header from "../components/header";
+import Layout from "../components/layout";
 
 // const topPageHeaderStyle = css({
 //   fontSize: 60,
@@ -34,10 +32,7 @@ import Header from "../components/header";
 
 export default function Home({ data } : { data: any }) {
   return (
-    <div >
-      <Header 
-        headerText={"Kami Blog"}
-      />
+    <Layout>
       <div >
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {data.allMarkdownRemark.edges.map(({ node } : { node: any }) => (
@@ -56,7 +51,7 @@ export default function Home({ data } : { data: any }) {
           </div>
         ))}
       </div>
-    </div>
+    </Layout>
   )
 }
 
