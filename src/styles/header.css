@@ -1,0 +1,10 @@
+h1 {
+  font-size: 60px;
+  font-family: "Kanit";
+  color: #000000;
+  border-bottom: medium solid #000000;
+}
+
+a {
+  text-decoration: none;
+}
