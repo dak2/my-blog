@@ -6,6 +6,7 @@ import "../styles/index.css";
 export default function Index({ data } : { data: any }) {
   return (
     <Layout>
+      <title>{"ホーム | KamiBlog"}</title>
       <div>
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {data.allMarkdownRemark.edges.map(({ node } : { node: any }) => (

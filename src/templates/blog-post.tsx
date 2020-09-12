@@ -7,6 +7,7 @@ export default function BlogPost({ data } : { data: any }) {
   const post = data.markdownRemark
   return (
     <Layout>
+      <title>{post.frontmatter.title}</title>
       <div>
         <h2>Title : {post.frontmatter.title}</h2>
         <div >Date : {post.frontmatter.date}</div>
