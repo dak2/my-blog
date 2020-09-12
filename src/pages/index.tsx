@@ -8,6 +8,7 @@ import "../styles/index.scss";
 export default function Index({ data } : { data: any }) {
   return (
     <Layout>
+      <title>{"ホーム | Kami Blog"}</title>
       <div>
         {data.allMarkdownRemark.edges.map(({ node } : { node: any }) => (
           <div key={node.id} className="articleContent">
