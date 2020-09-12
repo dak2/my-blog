@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout";
-import "../styles/index.css";
+import "../styles/index.scss";
 
 export default function Index({ data } : { data: any }) {
   return (
