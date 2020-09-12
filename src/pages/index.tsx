@@ -9,15 +9,15 @@ export default function Index({ data } : { data: any }) {
       <div>
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {data.allMarkdownRemark.edges.map(({ node } : { node: any }) => (
-          <div key={node.id} style={{marginBottom: '10%'}}>
+          <div key={node.id} className="articleContent">
             <Link
               to={node.fields.slug}
             >
-              <div className="title">
+              <div className="articleTitle">
                 {node.frontmatter.title}{" "}
               </div>
             </Link>
-            <div>
+            <div className="articleCreatedAt">
             — {node.frontmatter.date}
             </div>
             <p className="description">{node.excerpt}</p>
