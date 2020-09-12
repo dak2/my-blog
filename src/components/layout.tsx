@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/header";
 import "typeface-kanit";
-import "../styles/layout.css";
+import "../styles/layout.scss";
 
 export default function Layout({ children } : { children: any }) {
   return (

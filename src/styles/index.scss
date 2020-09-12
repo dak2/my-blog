@@ -1,0 +1,25 @@
+.articleTitle {
+  text-decoration: 'none';
+  color: rgb(3,111,185);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.description {
+  font-size: 20px;
+}
+
+.articleContent {
+  max-width: 820px;
+  margin: auto;
+  text-align: left;
+  margin-bottom: 3%;
+  letter-spacing: 0.1em;
+}
+
+.articleCreatedAt {
+  font-size: 18px;
+  span {
+    margin-left: 1%;
+  }
+}

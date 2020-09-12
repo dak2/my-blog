@@ -1,7 +1,7 @@
 import React from "react"
 import "typeface-kanit"
 import { Link } from "gatsby";
-import "../styles/header.css";
+import "../styles/header.scss";
 
 type Props = {
   headerText: string,
