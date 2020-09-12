@@ -10,10 +10,11 @@
 }
 
 .articleContent {
-  width: 60%;
+  max-width: 820px;
   margin: auto;
   text-align: left;
   margin-bottom: 3%;
+  letter-spacing: 0.1em;
 }
 
 .articleCreatedAt {

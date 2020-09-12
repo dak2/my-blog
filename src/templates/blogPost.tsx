@@ -1,5 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClock } from '@fortawesome/free-solid-svg-icons'
 import Layout from "../components/layout";
 import "../styles/blogPost.scss";
 
@@ -7,14 +9,15 @@ export default function BlogPost({ data } : { data: any }) {
   const post = data.markdownRemark
   return (
     <Layout>
-      <div>
-        <h2 className="pageTitle">Title : {post.frontmatter.title}</h2>
+      <div className="pageContainer">
+        <div className="pageTitle">{post.frontmatter.title}</div>
         <div className="pageCreatedAt">
-          Date : {post.frontmatter.date}
+          <FontAwesomeIcon icon={faClock} />
+          <span>
+            {post.frontmatter.date}
+          </span>
         </div>
-        <div className="pageContainer">
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        </div>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>
   )
