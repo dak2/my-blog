@@ -1,5 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClock } from '@fortawesome/free-solid-svg-icons'
 import Layout from "../components/layout";
 import "../styles/index.scss";
 
@@ -17,7 +19,10 @@ export default function Index({ data } : { data: any }) {
               </div>
             </Link>
             <div className="articleCreatedAt">
-            — {node.frontmatter.date}
+              <FontAwesomeIcon icon={faClock} />
+              <span>
+                {node.frontmatter.date}
+              </span>
             </div>
             <p className="description">{node.excerpt}</p>
           </div>
