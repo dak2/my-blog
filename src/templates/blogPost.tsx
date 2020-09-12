@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout";
-import "../styles/blog-post.scss";
+import "../styles/blogPost.scss";
 
 export default function BlogPost({ data } : { data: any }) {
   const post = data.markdownRemark
