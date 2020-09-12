@@ -8,8 +8,10 @@ export default function BlogPost({ data } : { data: any }) {
   return (
     <Layout>
       <div>
-        <h2>Title : {post.frontmatter.title}</h2>
-        <div >Date : {post.frontmatter.date}</div>
+        <h2 className="pageTitle">Title : {post.frontmatter.title}</h2>
+        <div className="pageCreatedAt">
+          Date : {post.frontmatter.date}
+        </div>
         <div className="pageContainer">
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
