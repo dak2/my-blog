@@ -3,9 +3,10 @@ import { Link, graphql } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 import Layout from "../components/layout";
+import Navigation from '../components/navigation';
 import "../styles/blog-list-template.scss";
 
-export default function Index({ data } : { data: any }) {
+export default function BlogList({ data, pageContext } : any) {
   return (
     <Layout>
       <title>{"ホーム | Kami Blog"}</title>
@@ -29,6 +30,7 @@ export default function Index({ data } : { data: any }) {
           </div>
         ))}
       </div>
+      <Navigation blogListPagenate={pageContext}/>
     </Layout>
   )
 }
