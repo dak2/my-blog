@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
+import '../styles/navigation.scss'
 
 type Props = {
   blogListPagenate?: any,
@@ -16,17 +17,14 @@ class Navigation extends Component<Props, {}> {
     const blogListPagenation = (
       <ul
         style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          listStyle: 'none',
           padding: 0,
         }}
       >
         {!isFirst && (
           <Link to={prevPage} rel="prev">
-            ← Previous Page
+            <div className="navigation">
+              ← Previous Page
+            </div>
           </Link>
         )}
         {Array.from({ length: numPages }, (_, i) => (
@@ -37,13 +35,17 @@ class Navigation extends Component<Props, {}> {
             }}
           >
             <Link to={`/${i === 0 ? '' : i + 1}`}>
-              {i + 1}
+              <div className="navigation">
+                {i + 1}
+              </div>
             </Link>
           </li>
         ))}
         {!isLast && (
           <Link to={nextPage} rel="next">
-            Next Page →
+            <div className="navigation">
+              Next Page →
+            </div>
           </Link>
         )}
       </ul>
