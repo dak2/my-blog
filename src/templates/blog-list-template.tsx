@@ -3,9 +3,10 @@ import { Link, graphql } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 import Layout from "../components/layout";
-import "../styles/index.scss";
+import Pagenation from '../components/pagenation';
+import "../styles/blog-list-template.scss";
 
-export default function Index({ data } : { data: any }) {
+export default function BlogList({ data, pageContext } : any) {
   return (
     <Layout>
       <title>{"ホーム | Kami Blog"}</title>
@@ -29,25 +30,30 @@ export default function Index({ data } : { data: any }) {
           </div>
         ))}
       </div>
+      <Pagenation blogListPagenate={pageContext}/>
     </Layout>
   )
 }
 
-export const query = graphql`
-  query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+export const blogListQuery = graphql`
+  query blogListQuery($skip: Int!, $limit: Int!) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       totalCount
       edges {
         node {
           id
+          excerpt(format: MARKDOWN, pruneLength: 100)
+          fields {
+            slug
+          }
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
           }
-          fields {
-            slug
-          }
-          excerpt
         }
       }
     }

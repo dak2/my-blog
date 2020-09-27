@@ -5,7 +5,7 @@ import { faClock } from '@fortawesome/free-solid-svg-icons'
 import Layout from "../components/layout";
 import "../styles/blogPost.scss";
 
-export default function BlogPost({ data } : { data: any }) {
+export default function BlogPost({ data, pageContext } : any) {
   const post = data.markdownRemark
   return (
     <Layout>
