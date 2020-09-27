@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 import Layout from "../components/layout";
-import Navigation from '../components/navigation';
+import Pagenation from '../components/pagenation';
 import "../styles/blog-list-template.scss";
 
 export default function BlogList({ data, pageContext } : any) {
@@ -30,7 +30,7 @@ export default function BlogList({ data, pageContext } : any) {
           </div>
         ))}
       </div>
-      <Navigation blogListPagenate={pageContext}/>
+      <Pagenation blogListPagenate={pageContext}/>
     </Layout>
   )
 }

@@ -1,13 +1,13 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
-import '../styles/navigation.scss'
+import '../styles/pagenation.scss'
 
 type Props = {
   blogListPagenate?: any,
   blogPostPagenate?: any,
 }
 
-class Navigation extends Component<Props, {}> {
+class Pagenation extends Component<Props, {}> {
   render() {
     const { currentPage, numPages } = this.props.blogListPagenate
     const isFirst = currentPage === 1
@@ -58,4 +58,4 @@ class Navigation extends Component<Props, {}> {
 
 }
 
-export default Navigation;
+export default Pagenation;
