@@ -13,7 +13,15 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-fontawesome-css`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-code-titles`,
+          `gatsby-remark-prismjs`,
+        ]
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
