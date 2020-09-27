@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 import Layout from "../components/layout";
 import "../styles/blogPost.scss";
+import "prismjs/themes/prism-tomorrow.css"
 
 export default function BlogPost({ data, pageContext } : any) {
   const post = data.markdownRemark
