@@ -17,8 +17,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
+        name: `articles`,
+        path: `${__dirname}/contents/articles`,
       },
     },
     {
@@ -30,7 +30,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `minimal-ui`,
-        icon: `static/blog_icon.png`,
+        icon: `contents/assets/blog_icon.png`,
       },
     },
   ],
